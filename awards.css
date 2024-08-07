@@ -1,0 +1,149 @@
+body{
+    margin:0;
+    padding:0;
+    background:rgb(4,75,97);
+}
+.container{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    height:100vh;
+    position: relative;
+    overflow:hidden;
+}
+
+.bubble{
+    position:absolute;
+    display:flex;
+}
+.bubble span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #ccdbdf;
+    margin:0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #c1c3c444,
+    0 0 50px #cbd4d6,
+    0 0 100px #d1d3d69c;
+    animation: animated 15s linear infinite;
+
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubble span:nth-child(even){
+    background:orange;
+    box-shadow: 0 0 0 10pxx brown,
+    0 0 50px orange,
+    0 0 100px orange;
+}
+
+@keyframes animated{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width:600px;
+    background-color:black;
+    position: absolute;
+    left: 10%;
+    top:10%;
+    bottom: 50px;
+    border-radius: 10px;
+    border-color: red;
+    animation: rotateBorder 5s linear infinite;
+    animation: borderAnimation1 5s linear infinite;
+}
+@keyframes borderAnimation1{
+    0% {
+        
+        box-shadow: 0 0 20px rgb(251, 255, 0), inset 0 0 20px rgb(251, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 40px rgb(251, 255, 0), inset 0 0 40px rgb(251, 255, 0);
+    
+    }
+    100% {
+        
+        box-shadow: 0 0 20px rgb(251, 255, 0), inset 0 0 20px rgb(251, 255, 0);
+    }
+}
+
+
+.image-slider{
+    display: flex;
+    flex-direction: column;
+    width:500px;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    
+}
+img{
+    width: 500px;
+    height:700px;
+    scroll-snap-align: start;
+    border-bottom: 1px solid #ccc;
+    top: 20px;
+}
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width:600px;
+    background-color:black;
+    position: absolute;
+    left: 50%;
+    top:10%;
+    bottom: 50px;
+    border-radius: 10px;
+    border-color: red;
+    animation: rotateBorder 5s linear infinite;
+    animation: borderAnimation1 5s linear infinite;
+    overflow: hidden;
+}
+.container1 a{
+    display: block;
+    width: 500px;
+    height: 700px;
+}
+.container1 a:hover~.container2{
+    opacity: 1;
+}
+.container1 a#img1:hover ~ .container2::before {
+    content: "Details about Image 1";
+}
+.container1 a#img2:hover ~ .container2::before {
+    content: "Details about Image 2";
+}
+.container1 a#img3:hover ~ .container2::before {
+    content: "Details about Image 3";
+}
+.details:target {
+    display: block;
+    position: absolute;
+}
+.details {
+    display: none;
+}
+p{
+    font-size: bold;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
