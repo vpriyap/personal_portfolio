@@ -62,7 +62,7 @@ body{
     position: absolute;
     left: 10%;
     top:10%;
-    bottom: 50px;
+    bottom: 10px;
     border-radius: 10px;
     border-color: red;
     animation: rotateBorder 5s linear infinite;
@@ -110,7 +110,7 @@ img{
     position: absolute;
     left: 50%;
     top:10%;
-    bottom: 50px;
+    bottom: 10px;
     border-radius: 10px;
     border-color: red;
     animation: rotateBorder 5s linear infinite;
@@ -142,8 +142,21 @@ img{
     display: none;
 }
 p{
-    font-size: bold;
+
     color:white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+    font-size: 60px; 
+    text-align: center;
+    justify-content: center;
 }
+.image-container{
+    margin-left: 80%;
+    margin-top: 50%;
+}
+.image-container img{
+    width: 200px;
+    height: auto;
+    border-radius: 40%;
+}
+
+
